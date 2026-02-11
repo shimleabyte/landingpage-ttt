@@ -3,15 +3,26 @@
    - variables, reset, typography, base layout
    ========================================================== */
 :root {
-  /* Colors */
-  --color-primary: #0f766e;
-  --color-secondary: #f5f5dc;
-  --color-accent: #d4af37;
-  --color-bg: #f9fafb;
-  --color-text: #111827;
-  --color-text-muted: #4b5563;
-  --color-surface: #ffffff;
-  --color-border: #e5e7eb;
+  /* Green SaaS palette */
+  --green-900: #0b3d2e;
+  --green-800: #0f5132;
+  --green-700: #146c43;
+  --green-600: #198754;
+  --green-500: #20c997;
+  --green-400: #3dd5a7;
+  --green-300: #75e6c1;
+  --green-200: #a8f0d6;
+  --green-100: #d1fae5;
+
+  /* Semantic colors */
+  --color-primary: var(--green-600);
+  --color-secondary: var(--green-100);
+  --color-accent: var(--green-400);
+  --color-bg: #08281f;
+  --color-text: #f8fffc;
+  --color-text-muted: color-mix(in srgb, var(--green-100) 78%, white);
+  --color-surface: #0f4a34;
+  --color-border: color-mix(in srgb, var(--green-300) 28%, transparent);
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -26,8 +37,8 @@
   --space-16: 4rem;
 
   /* Type */
-  --font-heading: "Plus Jakarta Sans", "Inter", Arial, sans-serif;
-  --font-body: "Manrope", "Inter", Arial, sans-serif;
+  --font-heading: "Aref Ruqaa", serif;
+  --font-body: "Inter", Arial, sans-serif;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
   --fs-lg: 1.125rem;
@@ -37,11 +48,11 @@
 
   /* Layout + Effects */
   --container-max: 72rem;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 0.875rem;
   --radius-lg: 1rem;
-  --shadow-soft: 0 10px 30px rgba(17, 24, 39, 0.08);
-  --shadow-hover: 0 16px 36px rgba(17, 24, 39, 0.14);
+  --shadow-soft: 0 14px 32px rgba(2, 16, 12, 0.24);
+  --shadow-hover: 0 18px 40px rgba(1, 12, 8, 0.36);
   --transition-fast: 180ms ease;
   --transition-base: 280ms ease;
 }
@@ -61,7 +72,7 @@ body {
   font-size: var(--fs-base);
   line-height: 1.65;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: radial-gradient(circle at top left, #0f5132 0%, #08281f 68%);
   text-rendering: optimizeLegibility;
 }
 
@@ -78,9 +89,9 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #fff;
 }
 
 h1 {
@@ -112,6 +123,7 @@ p {
   border-radius: 999px;
   font-size: var(--fs-sm);
   font-weight: 600;
-  color: var(--color-primary);
-  background: color-mix(in srgb, var(--color-primary) 10%, white);
+  color: #fff;
+  background: color-mix(in srgb, var(--green-500) 24%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green-300) 28%, transparent);
 }
