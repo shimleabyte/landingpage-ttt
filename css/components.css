@@ -581,3 +581,253 @@
     margin-bottom: var(--space-6);
   }
 }
+
+/* ==========================================================
+   INSERTED: Codecademy-style hierarchy refinements (layout grouping)
+   ========================================================== */
+
+/* Hero trust row + illustration support */
+.hero-trust {
+  max-width: 60ch;
+  font-size: var(--fs-base);
+  color: var(--green-200);
+}
+
+.hero-illustration {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--green-200) 34%, transparent);
+  margin-bottom: var(--space-5);
+}
+
+/* Social proof strip */
+.social-proof {
+  padding-block: clamp(1.3rem, 4vw, 2.4rem);
+}
+
+.social-proof-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.social-proof-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--green-200) 22%, transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--green-900) 70%, transparent);
+}
+
+.social-proof-item span {
+  font-size: 1.2rem;
+}
+
+.social-proof-item p {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Program path cards */
+.program-card {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.program-level {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--green-200) 34%, transparent);
+  color: var(--green-100);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.program-meta {
+  color: var(--green-200);
+  font-size: var(--fs-sm);
+}
+
+/* Mentor */
+.mentor-grid {
+  grid-template-columns: 1fr;
+}
+
+.mentor-card {
+  padding: var(--space-6);
+}
+
+.mentor-card img {
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid color-mix(in srgb, var(--green-200) 35%, transparent);
+  margin-bottom: var(--space-4);
+}
+
+.mentor-badge,
+.mentor-exp {
+  font-size: var(--fs-sm);
+  color: var(--green-200);
+}
+
+/* Learning steps */
+.learning-steps-grid {
+  grid-template-columns: 1fr;
+}
+
+.learning-step {
+  padding: var(--space-6);
+}
+
+.learning-step span {
+  font-size: 1.4rem;
+}
+
+.learning-step h3 {
+  margin-block: var(--space-2) var(--space-3);
+}
+
+/* Outcomes */
+.outcome-grid {
+  grid-template-columns: 1fr;
+}
+
+.outcome-card {
+  padding: var(--space-6);
+}
+
+.outcome-progress {
+  width: 100%;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--green-900) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green-200) 24%, transparent);
+  margin-top: var(--space-3);
+  overflow: hidden;
+}
+
+.outcome-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-400), var(--green-200));
+}
+
+/* Testimonial enhancements */
+.testimonial-card img {
+  width: 4.1rem;
+  height: 4.1rem;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid color-mix(in srgb, var(--green-200) 34%, transparent);
+  margin-bottom: var(--space-3);
+}
+
+.testimonial-program {
+  font-size: var(--fs-sm);
+  color: var(--green-200);
+  margin-bottom: var(--space-2);
+}
+
+/* Pricing conversion cues */
+.pricing-badge {
+  width: fit-content;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: color-mix(in srgb, var(--green-500) 34%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green-200) 34%, transparent);
+}
+
+.pricing-checklist {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.pricing-checklist li {
+  color: var(--green-100);
+  font-size: var(--fs-sm);
+}
+
+.pricing-checklist li::before {
+  content: "✔";
+  color: var(--green-400);
+  margin-right: 0.45rem;
+}
+
+/* Footer expansion */
+.footer-expanded {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.footer-links-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.footer-title {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.footer-links-group a {
+  display: block;
+  color: var(--green-100);
+  margin-bottom: 0.35rem;
+}
+
+.footer-links-group a:hover {
+  color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .social-proof-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .mentor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .learning-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .outcome-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-expanded {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-8);
+  }
+
+  .footer-links-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-expanded .footer-copy {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 30rem) {
+  .program-card .btn,
+  .pricing-card .btn,
+  .hero-actions .btn,
+  .final-cta-card .btn {
+    width: 100%;
+  }
+}
