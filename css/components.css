@@ -831,3 +831,229 @@
     width: 100%;
   }
 }
+
+/* ==========================================================
+   INSERTED: Mobile-first refinements only (tablet/mobile/small mobile)
+   - Desktop styles remain untouched.
+   ========================================================== */
+
+/* Unified icon styling for Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  line-height: 1;
+}
+
+.icon-inline {
+  font-size: 1.3rem;
+}
+
+.feature-icon.material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+/* Tablet <= 1024px */
+@media (max-width: 64rem) {
+  .section {
+    padding-block: clamp(3.75rem, 8vw, 5rem);
+  }
+
+  .container {
+    width: min(100% - 2.2rem, var(--container-max));
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .hero-content,
+  .hero-card {
+    text-align: center;
+  }
+
+  .hero-content p,
+  .hero-trust {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .program-grid,
+  .testimoni-grid,
+  .pricing-grid,
+  .mentor-grid,
+  .learning-steps-grid,
+  .outcome-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .program-card,
+  .testimonial-card,
+  .pricing-card,
+  .mentor-card,
+  .learning-step,
+  .outcome-card {
+    padding: var(--space-6);
+  }
+}
+
+/* Mobile <= 768px */
+@media (max-width: 48rem) {
+  .container {
+    width: min(100% - 2.5rem, var(--container-max));
+  }
+
+  .site-header {
+    background: color-mix(in srgb, var(--green-900) 68%, transparent);
+  }
+
+  /* Mobile nav: larger tap targets + overlay + slide-down feeling */
+  .mobile-menu {
+    position: fixed;
+    top: 4.4rem;
+    left: 1rem;
+    right: 1rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    transform: translateY(-0.8rem);
+    border-radius: 0.95rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-menu a,
+  .mobile-menu .btn,
+  .hamburger,
+  .btn {
+    min-height: 44px;
+  }
+
+  .mobile-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .site-header.mobile-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(4, 22, 16, 0.5);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Hero mobile readability */
+  .hero {
+    padding-block: 4.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.25;
+  }
+
+  .hero-content,
+  .hero-card {
+    padding-inline: 0.15rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 52px;
+    border-radius: 0.85rem;
+  }
+
+  /* Thumb-friendly cards/buttons */
+  .program-card .btn,
+  .pricing-card .btn,
+  .final-cta-card .btn {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 0.85rem;
+  }
+
+  .pricing-price {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .pricing-card.is-highlighted {
+    border-color: color-mix(in srgb, var(--green-300) 75%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--green-300) 55%, transparent), var(--shadow-hover);
+  }
+
+  .testimonial-card {
+    text-align: center;
+  }
+
+  .testimonial-card p {
+    max-width: 33ch;
+    margin-inline: auto;
+  }
+
+  .mentor-card {
+    text-align: center;
+  }
+
+  .mentor-card p:last-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .social-proof-item,
+  .learning-step,
+  .outcome-card {
+    gap: var(--space-3);
+  }
+}
+
+/* Small mobile <= 480px */
+@media (max-width: 30rem) {
+  .container {
+    width: min(100% - 2rem, var(--container-max));
+  }
+
+  .section {
+    padding-block: 3.75rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.75rem, 9vw, 2.2rem);
+  }
+
+  .hero-trust,
+  .hero-content p,
+  .pricing-features li,
+  .pricing-checklist li,
+  .footer-links-group a {
+    font-size: 0.95rem;
+  }
+
+  .program-card,
+  .testimonial-card,
+  .pricing-card,
+  .mentor-card,
+  .learning-step,
+  .outcome-card,
+  .social-proof-item {
+    padding: 1rem;
+  }
+
+  .hero-actions .btn,
+  .program-card .btn,
+  .pricing-card .btn,
+  .final-cta-card .btn,
+  .mobile-menu .btn {
+    min-height: 48px;
+  }
+}
