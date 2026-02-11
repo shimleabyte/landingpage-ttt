@@ -1,0 +1,39 @@
+/* ==========================================================
+   UTILITIES
+   - layout helpers, spacing helpers, reusable utility classes
+   ========================================================== */
+.container {
+  width: min(100% - 1.5rem, var(--container-max));
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.section {
+  padding-block: clamp(3rem, 9vw, 4.75rem);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-6 {
+  margin-top: var(--space-6);
+}
+
+.w-full {
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    width: min(100% - 2rem, var(--container-max));
+  }
+}
